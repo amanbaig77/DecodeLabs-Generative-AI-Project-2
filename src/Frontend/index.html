@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        CopyForge AI — DecodeLabs Project 2
+    </title>
+
+    <meta
+        name="description"
+        content="Automated Copywriting & Tone Transformer"
+    >
+
+    <link
+        rel="stylesheet"
+        href="/style.css"
+    >
+</head>
+
+<body>
+
+    <!-- Background -->
+    <div class="bg-glow glow-one"></div>
+    <div class="bg-glow glow-two"></div>
+
+
+    <!-- =========================
+         TOP BAR
+    ========================== -->
+
+    <header class="topbar">
+
+        <div class="brand">
+
+            <div class="brand-mark">
+                ✦
+            </div>
+
+            <div>
+
+                <div class="brand-name">
+                    CopyForge
+                    <span>AI</span>
+                </div>
+
+                <div class="brand-sub">
+                    DecodeLabs · Generative AI Project 2
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="status-pill">
+
+            <span class="status-dot"></span>
+
+            AI Generator Ready
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+         MAIN
+    ========================== -->
+
+    <main class="container">
+
+
+        <!-- HERO -->
+
+        <section class="hero">
+
+            <div class="eyebrow">
+                AUTOMATED COPYWRITING & TONE TRANSFORMER
+            </div>
+
+            <h1>
+                Turn product details into
+                <br>
+                <span>platform-ready copy.</span>
+            </h1>
+
+            <p>
+                Generate professional marketing content
+                for LinkedIn, Instagram, and Email with
+                controllable tone, Temperature, and Top-P.
+            </p>
+
+        </section>
+
+
+
+        <!-- =========================
+             WORKSPACE
+        ========================== -->
+
+        <section class="workspace">
+
+
+            <!-- =====================
+                 LEFT PANEL
+            ====================== -->
+
+            <form
+                id="copyForm"
+                class="panel form-panel"
+            >
+
+                <div class="panel-heading">
+
+                    <div>
+
+                        <h2>
+                            Campaign Brief
+                        </h2>
+
+                        <p>
+                            Tell the AI what you are promoting.
+                        </p>
+
+                    </div>
+
+                    <div class="step-badge">
+                        01
+                    </div>
+
+                </div>
+
+
+                <!-- PRODUCT -->
+
+                <label for="productName">
+                    Product Name
+                </label>
+
+                <input
+                    id="productName"
+                    type="text"
+                    maxlength="200"
+                    placeholder="e.g. EcoBottle"
+                    required
+                >
+
+
+                <!-- DESCRIPTION -->
+
+                <label for="description">
+                    Raw Product Description
+                </label>
+
+                <textarea
+                    id="description"
+                    maxlength="5000"
+                    rows="7"
+                    placeholder="Describe your product using the facts you want the AI to use..."
+                    required
+                ></textarea>
+
+                <div class="counter">
+
+                    <span id="descriptionCount">
+                        0
+                    </span>
+
+                    /5000
+
+                </div>
+
+
+                <!-- PLATFORM + TONE -->
+
+                <div class="two-col">
+
+                    <div>
+
+                        <label for="platform">
+                            Platform
+                        </label>
+
+                        <select id="platform">
+
+                            <option value="LinkedIn">
+                                LinkedIn
+                            </option>
+
+                            <option value="Instagram">
+                                Instagram
+                            </option>
+
+                            <option value="Email">
+                                Email
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div>
+
+                        <label for="tone">
+                            Tone
+                        </label>
+
+                        <select id="tone">
+
+                            <option value="Professional">
+                                Professional
+                            </option>
+
+                            <option value="Creative">
+                                Creative
+                            </option>
+
+                            <option value="Friendly">
+                                Friendly
+                            </option>
+
+                            <option value="Luxury">
+                                Luxury
+                            </option>
+
+                            <option value="Persuasive">
+                                Persuasive
+                            </option>
+
+                            <option value="Minimal">
+                                Minimal
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =====================
+                     AI CONTROLS
+                ====================== -->
+
+                <div class="controls-card">
+
+
+                    <!-- TEMPERATURE -->
+
+                    <div class="control-row">
+
+                        <div>
+
+                            <label
+                                class="inline-label"
+                                for="temperature"
+                            >
+                                Temperature
+                                <span class="info">
+                                    ?
+                                </span>
+                            </label>
+
+                            <small>
+                                Controls creative variation
+                            </small>
+
+                        </div>
+
+                        <strong id="temperatureValue">
+                            0.70
+                        </strong>
+
+                    </div>
+
+
+                    <input
+                        id="temperature"
+                        type="range"
+                        min="0"
+                        max="2"
+                        step="0.05"
+                        value="0.70"
+                    >
+
+
+                    <div class="scale">
+
+                        <span>
+                            Precise
+                        </span>
+
+                        <span>
+                            Balanced
+                        </span>
+
+                        <span>
+                            Creative
+                        </span>
+
+                    </div>
+
+
+
+                    <!-- TOP P -->
+
+                    <div
+                        class="control-row top-p-row"
+                    >
+
+                        <div>
+
+                            <label
+                                class="inline-label"
+                                for="topP"
+                            >
+                                Top-P
+                                <span class="info">
+                                    ?
+                                </span>
+                            </label>
+
+                            <small>
+                                Controls token selection range
+                            </small>
+
+                        </div>
+
+                        <strong id="topPValue">
+                            0.90
+                        </strong>
+
+                    </div>
+
+
+                    <input
+                        id="topP"
+                        type="range"
+                        min="0.05"
+                        max="1"
+                        step="0.05"
+                        value="0.90"
+                    >
+
+
+                    <div class="scale">
+
+                        <span>
+                            Focused
+                        </span>
+
+                        <span>
+                            Balanced
+                        </span>
+
+                        <span>
+                            Broad
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- GENERATE -->
+
+                <button
+                    id="generateBtn"
+                    class="generate-btn"
+                    type="submit"
+                >
+
+                    <span class="spark">
+                        ✦
+                    </span>
+
+                    Generate Marketing Copy
+
+                    <span class="arrow">
+                        →
+                    </span>
+
+                </button>
+
+
+                <!-- ERROR -->
+
+                <div
+                    id="errorBox"
+                    class="error-box hidden"
+                ></div>
+
+            </form>
+
+
+
+            <!-- =====================
+                 RIGHT PANEL
+            ====================== -->
+
+            <div
+                class="panel output-panel"
+            >
+
+                <div class="panel-heading">
+
+                    <div>
+
+                        <h2>
+                            Generated Copy
+                        </h2>
+
+                        <p id="outputSub">
+                            Your AI-generated campaign
+                            will appear here.
+                        </p>
+
+                    </div>
+
+
+                    <div
+                        id="platformBadge"
+                        class="platform-badge"
+                    >
+                        READY
+                    </div>
+
+                </div>
+
+
+                <!-- EMPTY STATE -->
+
+                <div
+                    id="emptyState"
+                    class="empty-state"
+                >
+
+                    <div class="empty-icon">
+                        ✦
+                    </div>
+
+                    <h3>
+                        Your copy is waiting
+                    </h3>
+
+                    <p>
+                        Fill in the campaign brief and click
+                        <b>
+                            Generate Marketing Copy
+                        </b>.
+                    </p>
+
+
+                    <div class="feature-row">
+
+                        <span>
+                            ✓ Dynamic prompt
+                        </span>
+
+                        <span>
+                            ✓ Tone control
+                        </span>
+
+                        <span>
+                            ✓ Temperature + Top-P
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =====================
+                     RESULT
+                ====================== -->
+
+                <div
+                    id="resultSection"
+                    class="result hidden"
+                >
+
+
+                    <!-- SUBJECT -->
+
+                    <div
+                        id="subjectBlock"
+                        class="copy-block hidden"
+                    >
+
+                        <div class="block-label">
+
+                            SUBJECT
+
+                            <button
+                                type="button"
+                                class="copy-btn"
+                                data-copy-target="#subjectValue"
+                            >
+                                Copy
+                            </button>
+
+                        </div>
+
+                        <div
+                            id="subjectValue"
+                            class="subject-text"
+                        ></div>
+
+                    </div>
+
+
+
+                    <!-- HEADLINE -->
+
+                    <div class="copy-block">
+
+                        <div class="block-label">
+
+                            HEADLINE
+
+                            <button
+                                type="button"
+                                class="copy-btn"
+                                data-copy-target="#headlineValue"
+                            >
+                                Copy
+                            </button>
+
+                        </div>
+
+                        <div
+                            id="headlineValue"
+                            class="headline-text"
+                        ></div>
+
+                    </div>
+
+
+
+                    <!-- BODY -->
+
+                    <div class="copy-block">
+
+                        <div class="block-label">
+
+                            BODY
+
+                            <button
+                                type="button"
+                                class="copy-btn"
+                                data-copy-target="#bodyValue"
+                            >
+                                Copy
+                            </button>
+
+                        </div>
+
+                        <div
+                            id="bodyValue"
+                            class="body-text"
+                        ></div>
+
+                    </div>
+
+
+
+                    <!-- CTA + HASHTAGS -->
+
+                    <div class="copy-grid">
+
+
+                        <div class="copy-block">
+
+                            <div class="block-label">
+
+                                CALL TO ACTION
+
+                                <button
+                                    type="button"
+                                    class="copy-btn"
+                                    data-copy-target="#ctaValue"
+                                >
+                                    Copy
+                                </button>
+
+                            </div>
+
+                            <div
+                                id="ctaValue"
+                                class="cta-text"
+                            ></div>
+
+                        </div>
+
+
+
+                        <div class="copy-block">
+
+                            <div class="block-label">
+
+                                HASHTAGS
+
+                                <button
+                                    type="button"
+                                    class="copy-btn"
+                                    data-copy-target="#hashtagsValue"
+                                >
+                                    Copy
+                                </button>
+
+                            </div>
+
+                            <div
+                                id="hashtagsValue"
+                                class="hashtags"
+                            ></div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- =====================
+                         METRICS
+                    ====================== -->
+
+                    <div class="metrics">
+
+
+                        <div>
+
+                            <span>
+                                Characters
+                            </span>
+
+                            <strong id="characterCount">
+                                0
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                Platform
+                            </span>
+
+                            <strong id="resultPlatform">
+                                —
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                Tone
+                            </span>
+
+                            <strong id="resultTone">
+                                —
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                Temperature
+                            </span>
+
+                            <strong id="resultTemperature">
+                                —
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- =====================
+                         COMPLIANCE
+                    ====================== -->
+
+                    <div class="notes">
+
+                        <div class="notes-title">
+                            ✓ Compliance Notes
+                        </div>
+
+                        <ul
+                            id="complianceNotes"
+                        ></ul>
+
+                    </div>
+
+
+
+                    <!-- ACTIONS -->
+
+                    <div class="result-actions">
+
+                        <button
+                            id="copyAll"
+                            type="button"
+                            class="secondary-btn"
+                        >
+                            Copy All
+                        </button>
+
+                        <button
+                            id="regenerate"
+                            type="button"
+                            class="secondary-btn accent"
+                        >
+                            Regenerate
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             FOOTER
+        ========================== -->
+
+        <footer>
+
+            <span>
+                DecodeLabs · Industrial Training Kit · Batch 2026
+            </span>
+
+            <span>
+                Generative AI · Project 2
+            </span>
+
+        </footer>
+
+    </main>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="/app.js"></script>
+
+</body>
+</html>
